@@ -1,0 +1,112 @@
+﻿@* @model IEnumerable<ToDo>
+
+<h2>To Do</h2>
+<a asp-action="Create" class="btn btn-success mb-3">Create New</a>
+<table class="table table-bordered table-striped ">
+    <thead>
+        <tr class="bg-warning ">
+            <td>Title</td>
+            <td>Date</td>
+            <td>Is Done</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Date</td>
+                <td>@item.IsDone</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@
+
+@model IEnumerable<ToDoList.Models.ToDo>
+
+<h1>To-Do List</h1>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Task</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Completed</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.IsDone</td>
+                <td>@item.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        function requestNotificationPermission() {
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        console.log("Notification permission granted.");
+                    }
+                });
+            }
+        }
+
+        // بررسی وظایف و نمایش اعلان
+        function checkTasks() {
+            const tasks = @Html.Raw(Json.Serialize(Model));
+            const now = new Date();
+
+            tasks.forEach(task => {
+                if (task.dueDate && !task.isCompleted) {
+                    const dueDate = new Date(task.dueDate);
+                    if (dueDate <= now && Notification.permission === "granted") {
+                        new Notification("Task Reminder", {
+                            body: `Task "${task.title}" is due now!`,
+                            icon: "/favicon.ico" // اختیاری: آیکون اعلان
+                        });
+                    }
+                }
+            });
+        }
+
+        // درخواست اجازه اعلان هنگام بارگذاری صفحه
+        window.onload = function () {
+            requestNotificationPermission();
+            checkTasks();
+            // بررسی وظایف هر 60 ثانیه
+            setInterval(checkTasks, 60000);
+        };
+    </script>
+}
