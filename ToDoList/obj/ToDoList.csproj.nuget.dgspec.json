@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\source\\repos\\ToDoList with MVC\\ToDoList\\ToDoList.csproj": {}
+    "C:\\Users\\asus\\source\\repos\\ToDoListWithMVC\\ToDoList\\ToDoList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\source\\repos\\ToDoList with MVC\\ToDoList\\ToDoList.csproj": {
+    "C:\\Users\\asus\\source\\repos\\ToDoListWithMVC\\ToDoList\\ToDoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\source\\repos\\ToDoList with MVC\\ToDoList\\ToDoList.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\source\\repos\\ToDoListWithMVC\\ToDoList\\ToDoList.csproj",
         "projectName": "ToDoList",
-        "projectPath": "C:\\Users\\asus\\source\\repos\\ToDoList with MVC\\ToDoList\\ToDoList.csproj",
+        "projectPath": "C:\\Users\\asus\\source\\repos\\ToDoListWithMVC\\ToDoList\\ToDoList.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\source\\repos\\ToDoList with MVC\\ToDoList\\obj\\",
+        "outputPath": "C:\\Users\\asus\\source\\repos\\ToDoListWithMVC\\ToDoList\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
