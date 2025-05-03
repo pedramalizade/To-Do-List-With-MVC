@@ -1,13 +1,26 @@
-# مرحله Build
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+# Step 1: Use the official .NET SDK image to build the application
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+
+# Step 2: Set the working directory inside the container
 WORKDIR /app
 
+# Step 3: Copy the project files to the container
 COPY . ./
+
+# Step 4: Restore the dependencies
+RUN dotnet restore
+
+# Step 5: Build the application
 RUN dotnet publish -c Release -o out
 
-# مرحله Run
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+# Step 6: Use the official .NET runtime image to run the application
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+
 WORKDIR /app
 COPY --from=build /app/out .
 
-ENTRYPOINT ["dotnet", "ToDoListWithMVC.dll"]
+# Step 7: Expose the port that the application will listen on
+EXPOSE 80
+
+# Step 8: Start the application
+ENTRYPOINT ["dotnet", "To-Do-List-With-MVC.dll"]
