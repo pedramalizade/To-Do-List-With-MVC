@@ -482,3 +482,15 @@ C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\obj\Debug\net9.0\refint\ToDo
 C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\obj\Debug\net9.0\ToDoList.pdb
 C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\obj\Debug\net9.0\ToDoList.genruntimeconfig.cache
 C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\obj\Debug\net9.0\ref\ToDoList.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\Domain.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\Domain.pdb
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\Application.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\Infrastructure.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\Application.pdb
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\Infrastructure.pdb
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\System.Data.SqlClient.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\runtimes\win-arm64\native\sni.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\runtimes\win-x64\native\sni.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\runtimes\win-x86\native\sni.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\asus\source\repos\ToDoListWithMVC\ToDoList\bin\Debug\net9.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

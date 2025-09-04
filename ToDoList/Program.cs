@@ -1,11 +1,14 @@
+using Application.Repositories;
+using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using ToDoList.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages(); 
+builder.Services.AddRazorPages();
 
+builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));

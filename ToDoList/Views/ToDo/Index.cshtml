@@ -51,6 +51,7 @@
             <th>Title</th>
             <th>Completed</th>
             <th>Due Date</th>
+            <th>Is Done</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -61,6 +62,7 @@
                 <td>@item.Title</td>
                 <td>@item.IsDone</td>
                 <td>@item.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@item.IsDone</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
