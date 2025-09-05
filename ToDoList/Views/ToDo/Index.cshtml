@@ -65,7 +65,7 @@
                 <td>@item.IsDone</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
@@ -85,7 +85,6 @@
             }
         }
 
-        // بررسی وظایف و نمایش اعلان
         function checkTasks() {
             const tasks = @Html.Raw(Json.Serialize(Model));
             const now = new Date();
@@ -96,18 +95,16 @@
                     if (dueDate <= now && Notification.permission === "granted") {
                         new Notification("Task Reminder", {
                             body: `Task "${task.title}" is due now!`,
-                            icon: "/favicon.ico" // اختیاری: آیکون اعلان
+                            icon: "/favicon.ico" 
                         });
                     }
                 }
             });
         }
 
-        // درخواست اجازه اعلان هنگام بارگذاری صفحه
         window.onload = function () {
             requestNotificationPermission();
             checkTasks();
-            // بررسی وظایف هر 60 ثانیه
             setInterval(checkTasks, 60000);
         };
     </script>

@@ -80,6 +80,25 @@ namespace ToDoList.Controllers
             return View(toDo);
         }
 
+        public async Task<IActionResult> Details(int id)
+        {
+            if (id <= 0)
+                return RedirectToAction("Index");
+
+            try
+            {
+                var toDo = await _toDoRepository.GetById(id);
+                if (toDo == null)
+                    return NotFound();
+
+                return View(toDo);
+            }
+            catch (Exception)
+            {
+                TempData["ErrorMessage"] = "An error occurred while loading the task details.";
+                return RedirectToAction("Index");
+            }
+        }
 
         public async Task<IActionResult> Delete(int id)
         {

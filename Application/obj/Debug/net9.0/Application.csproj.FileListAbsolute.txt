@@ -16,5 +16,3 @@ C:\Users\asus\source\repos\ToDoListWithMVC\Application\obj\Debug\net9.0\Applicat
 C:\Users\asus\source\repos\ToDoListWithMVC\Application\obj\Debug\net9.0\refint\Application.dll
 C:\Users\asus\source\repos\ToDoListWithMVC\Application\obj\Debug\net9.0\Application.pdb
 C:\Users\asus\source\repos\ToDoListWithMVC\Application\obj\Debug\net9.0\ref\Application.dll
-C:\Users\asus\source\repos\ToDoListWithMVC\Application\bin\Debug\net9.0\Application.runtimeconfig.json
-C:\Users\asus\source\repos\ToDoListWithMVC\Application\obj\Debug\net9.0\Application.genruntimeconfig.cache
